@@ -32,8 +32,7 @@
 			"}"
 		],
 		"description": "cpp"
-	}
-	,
+	},
 	"IO": {
 		"prefix": "io",
 		"body": [
@@ -68,8 +67,7 @@
 			"using namespace IO;"
 		],
 		"description": "IO"
-	}
-	,
+	},
 	"dijkstra": {
 		"prefix": "dij",
 		"body": [
@@ -119,8 +117,7 @@
 			"using namespace dij;"
 		],
 		"description": "dijkstra"
-	}
-	,
+	},
 	"二分—找右": {
 		"prefix": "erfen1",
 		"body": [
@@ -133,8 +130,7 @@
 			"cout << l << endl;"
 		],
 		"description": "二分—找右"
-	}
-	,
+	},
 	"二分—找左": {
 		"prefix": "erfen2",
 		"body": [
@@ -148,8 +144,7 @@
 			"else //l不存在"
 		],
 		"description": "二分—找左"
-	}
-	,
+	},
 	"二进制枚举": {
 		"prefix": "binary_enumeration",
 		"body": [
@@ -169,8 +164,7 @@
 			"}"
 		],
 		"description": "二进制枚举"
-	}
-	,
+	},
 	"求因子和": {
 		"prefix": "yinzi_sum",
 		"body": [
@@ -202,8 +196,7 @@
 			""
 		],
 		"description": "求因子和"
-	}
-	,
+	},
 	"求因子个数": {
 		"prefix": "yinzi_num",
 		"body": [
@@ -227,8 +220,7 @@
 			""
 		],
 		"description": "求因子个数"
-	}
-	,
+	},
 	"素因子分解": {
 		"prefix": "prime_factorization",
 		"body": [
@@ -243,8 +235,7 @@
 			""
 		],
 		"description": "素因子分解"
-	}
-	,
+	},
 	"01背包": {
 		"prefix": "bag_01",
 		"body": [
@@ -255,8 +246,7 @@
 			"}"
 		],
 		"description": "01背包"
-	}
-	,
+	},
 	"二分图匹配": {
 		"prefix": "erfen_graph_matching",
 		"body": [
@@ -278,23 +268,20 @@
 			"}"
 		],
 		"description": "二分图匹配"
-	}
-	,
+	},
 	"链式前向星": {
 		"prefix": "graph",
 		"body": [
 			"const int N = 1e6 + 10;",
 			"struct Edge",
 			"{",
-			"    int u, v, w, ne;",
+			"    int v, ne;",
 			"}e[N << 2];",
 			"int h[N];",
 			"int cnt;",
-			"void add(int u, int v, int w)",
+			"void add(int u, int v)",
 			"{",
-			"    e[cnt].u = u;",
 			"    e[cnt].v = v;",
-			"    e[cnt].w = w;",
 			"    e[cnt].ne = h[u];",
 			"    h[u] = cnt++;",
 			"}",
@@ -304,8 +291,7 @@
 			"}"
 		],
 		"description": "链式前向星"
-	}
-	,
+	},
 	"矩阵快速幂": {
 		"prefix": "q_Matrix",
 		"body": [
@@ -356,34 +342,34 @@
 			""
 		],
 		"description": "矩阵快速幂"
-	}
-	,
+	},
 	"树状数组": {
 		"prefix": "tree_array",
 		"body": [
+			"#define lowbit(x) ((x) & -(x))",
+			
 			"const int N = 1e6 + 10;",
-			"int tree[N], n;",
+			"LL tree[N], n;",
 			"void add(LL x,LL d)",
 			"{",
 			"    while(x <= n){",
 			"        tree[x] += d;",
-			"        x += lowbit(x);//查询x的后继们",
+			"        x += lowbit(x);",
 			"    }",
 			"}",
-			"LL sum(LL x)//前缀和",
+			"LL sum(LL x)",
 			"{",
 			"    LL sum = 0;",
 			"    while(x > 0){",
 			"        sum += tree[x];",
-			"        x -= lowbit(x);//查询x的前驱们",
+			"        x -= lowbit(x);",
 			"    }",
 			"    return sum;",
 			"}",
 			""
 		],
 		"description": "树状数组"
-	}
-	,
+	},
 	"最小生成树": {
 		"prefix": "kruskal",
 		"body": [
@@ -432,8 +418,7 @@
 			"using namespace kruskal;"
 		],
 		"description": "最小生成树"
-	}
-	,
+	},
 	"并查集": {
 		"prefix": "DSU",
 		"body": [
@@ -456,8 +441,7 @@
 			"using namespace union_set;"
 		],
 		"description": "并查集"
-	}
-	,
+	},
 	"素数筛": {
 		"prefix": "prime_sieve",
 		"body": [
@@ -488,8 +472,7 @@
 			"using namespace prime_sieve;"
 		],
 		"description": "素数筛"
-	}
-	,
+	},
 	"快速幂": {
 		"prefix": "q_pow",
 		"body": [
@@ -505,8 +488,7 @@
 			"}",
 		],
 		"description": "快速幂"
-	}
-	,
+	},
 	"按权相加法": {
 		"prefix": "jinzhi",
 		"body": [
@@ -521,8 +503,7 @@
 			""
 		],
 		"description": "按权相加法"
-	}
-	,
+	},
 	"spfa": {
 		"prefix": "spfa",
 		"body": [
@@ -583,8 +564,7 @@
 			"using namespace spfa_;"
 		],
 		"description": "spfa"
-	}
-	,
+	},
 	"poj": {
 		"prefix": "poj",
 		"body": [
@@ -617,8 +597,7 @@
 			"}"
 		],
 		"description": "poj"
-	}
-	,
+	},
 	"素数筛+欧拉函数": {
 		"prefix": "prime_sieve_phi",
 		"body": [
@@ -655,8 +634,7 @@
 			"using namespace prime_sieve_phi;"
 		],
 		"description": "素数筛+欧拉函数"
-	}
-	,
+	},
 	"素数筛+莫比乌斯": {
 		"prefix": "prime_sieve_mu",
 		"body": [
@@ -695,8 +673,7 @@
 			"using namespace prime_sieve_mu;"
 		],
 		"description": "素数筛+莫比乌斯反演"
-	}
-	,
+	},
 	"线性筛+因子个数": {
 		"prefix": "prime_sieve_sum_yinzi",
 		"body": [
@@ -735,8 +712,7 @@
 			"using namespace prime_sieve_sum_yinzi;"
 		],
 		"description": "线性筛+因子个数,因d也为积性函数，故也可以线性筛出来"
-	}
-	,
+	},
 	"线性筛+莫比乌斯+欧拉+前缀和": {
 		"prefix": "prime_sieve_phi_mu",
 		"body": [
@@ -779,8 +755,7 @@
 			"using namespace prime_sieve_phi_mu;"
 		],
 		"description": "线性筛+莫比乌斯+欧拉+前缀和"
-	}
-	,
+	},
 	"杜教筛（欧拉+莫比乌斯）": {
 		"prefix": "djs",
 		"body": [
@@ -810,8 +785,7 @@
 			"}"
 		],
 		"description": "杜教筛（欧拉+莫比乌斯）"
-	}
-	,
+	},
 	"模运算": {
 		"prefix": "mod",
 		"body": [
@@ -823,16 +797,14 @@
 			""
 		],
 		"description": "模运算"
-	}
-	,
+	},
 	"逆元费马小定理": {
 		"prefix": "inv_fm",
 		"body": [
 			"LL inv_fm(LL n, LL p) { return qm(n, p - 2, p); }"
 		],
 		"description": "逆元费马小定理"
-	}
-	,
+	},
 	"埃氏筛": {
 		"prefix": "prime_aishi_sieve",
 		"body": [
@@ -857,8 +829,7 @@
 			"using namespace prime_aishi_sieve;"
 		],
 		"description": "埃氏筛"
-	}
-	,
+	},
 	"线段树加法": {
 		"prefix": "xds_add",
 		"body": [
@@ -925,8 +896,7 @@
 			"using namespace xds_add;"
 		],
 		"description": "线段树加法"
-	}
-	,
+	},
 	"线段树+最大值": {
 		"prefix": "xds_max",
 		"body": [
@@ -976,8 +946,7 @@
 			"using namespace xds_max;"
 		],
 		"description": "线段树+最大值"
-	}
-	,
+	},
 	"线段树+最小值": {
 		"prefix": "xds_min",
 		"body": [
@@ -1027,30 +996,27 @@
 			"using namespace xds_min;"
 		],
 		"description": "线段树+最小值"
-	}
-	,
-	"codeforces": {
+	},
+	"cf": {
 		"prefix": "cf",
 		"body": [
-			"#include<bits/stdc++.h>",
+			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"#define LL                          long long",
-			"#define uLL                         unsigned long long",
-			"#define ld                          long double",
-			"#define db                          double",
-			"#define aLL(x)                      (x).begin(),(x).end()",
-			"#define MP                          make_pair",
-			"#define PB                          emplace_back",
-			"#define SZ(X)                       ((int)(X).size())   ",
-			"#define mset(s, _)                  memset(s, _, sizeof(s))",
-			"#define IOS                         ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);",
-			"#define endl                        \"\\n\"",
-			"#define forn(i, l, r)                for (int i = l; i <= r; i++)",
-			"typedef pair<int, int>               pii;",
-			"typedef pair<LL, LL>                 pLL;",
+			"#define LL long long",
+			"#define MP make_pair",
+			"#define SZ(X) ((int)(X).size())",
+			"#define IOS                      \\",
+			"    ios::sync_with_stdio(false); \\",
+			"    cin.tie(0);                  \\",
+			"    cout.tie(0);",
+			"typedef pair<int, int> PII;",
 			"const int INF = 0x3f3f3f3f;",
 			"",
-			"void solve(){",
+			"const int N = 1e6 + 10;",
+			"int a[N];",
+			"",
+			"void solve()",
+			"{",
 			"    int n;",
 			"    cin >> n;",
 			"}",
@@ -1060,15 +1026,15 @@
 			"    IOS;",
 			"    int t;",
 			"    cin >> t;",
-			"    while(t --){",
+			"    while (t--)",
+			"    {",
 			"        solve();",
 			"    }",
 			"    return 0;",
 			"}"
 		],
 		"description": "cf"
-	}
-	,
+	},
 	"KMP": {
 		"prefix": "KMP",
 		"body": [
@@ -1109,8 +1075,7 @@
 			"using namespace Kmp;"
 		],
 		"description": "KMP"
-	}
-	,
+	},
 	"BFS": {
 		"prefix": "BFS",
 		"body": [
@@ -1149,8 +1114,7 @@
 			"using namespace BFS;"
 		],
 		"description": "BFS"
-	}
-	,
+	},
 	"快速幂+快速乘": {
 		"prefix": "q_pow_mm",
 		"body": [
@@ -1190,8 +1154,7 @@
 			"using namespace q_pow_mm;"
 		],
 		"description": "快速幂+快速乘"
-	}
-	,
+	},
 	"欧几里得+拓展": {
 		"prefix": "gcd+exgcd",
 		"body": [
@@ -1211,8 +1174,7 @@
 			"}"
 		],
 		"description": "欧几里得+拓展"
-	}
-	,
+	},
 	"逆元exgcd": {
 		"prefix": "inv_exgcd",
 		"body": [
@@ -1239,8 +1201,7 @@
 			"}"
 		],
 		"description": "逆元exgcd"
-	}
-	,
+	},
 	"逆元欧拉定理": {
 		"prefix": "inv_euler",
 		"body": [
@@ -1259,8 +1220,7 @@
 			"LL inv_euler(LL n, LL p) {return qm(n, euler(p) - 1, p);}"
 		],
 		"description": "逆元欧拉定理"
-	}
-	,
+	},
 	"ls与rs宏定义": {
 		"prefix": "ls",
 		"body": [
@@ -1268,8 +1228,7 @@
 			"#define rs                          i << 1 | 1"
 		],
 		"description": "ls与rs宏定义"
-	}
-	,
+	},
 	"链表": {
 		"prefix": "LinkedList",
 		"body": [
@@ -1408,20 +1367,24 @@
 	"init": {
 		"prefix": "init",
 		"body": [
-			"#include<bits/stdc++.h>",
+			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"#define LL                          long long",
-			"#define MP                          make_pair",
-			"#define SZ(X)                       ((int)(X).size())",
-			"#define IOS                         ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);",
-			"#define DEBUG(X)                    cout << #X << \": \" << X << endl;",
-			"typedef pair<int , int>             PII;",
+			"#define LL long long",
+			"#define MP make_pair",
+			"#define SZ(X) ((int)(X).size())",
+			"#define IOS                      \\",
+			"    ios::sync_with_stdio(false); \\",
+			"    cin.tie(0);                  \\",
+			"    cout.tie(0);",
+			"#define DEBUG(X) cout << #X << \": \" << X << endl;",
+			"typedef pair<int, int> PII;",
+			"const int INF = 0x3f3f3f3f;",
 			"",
 			"signed main()",
 			"{",
-			"\tIOS;",
-			"\t",
-			"\treturn 0;",
+			"    IOS;",
+			"",
+			"    return 0;",
 			"}"
 		],
 		"description": "init"
@@ -1648,5 +1611,76 @@
 			"using namespace Trie01;"
 		],
 		"description": "01字典树"
+	},
+	"树链剖分": {
+		"prefix": "TreeChain",
+		"body": [
+			"namespace TreeChain{",
+			"    int w[N];",
+			"    int pre[N], sizx[N], son[N], deep[N];",
+			"    int dfn[N], top[N], a[N];",
+			"    int cnx; // dfs2 pool",
+			"",
+			"    void dfs1(int u, int fa)",
+			"    {",
+			"        pre[u] = fa;",
+			"        deep[u] = deep[fa] + 1;",
+			"        sizx[u] = 1;",
+			"        int maxson = -1;",
+			"        for (int i = h[u]; ~i; i = e[i].ne)",
+			"        {",
+			"            int v = e[i].v;",
+			"            if (v != fa)",
+			"            {",
+			"                dfs1(v, u);",
+			"                sizx[u] += sizx[v];",
+			"                if (maxson < sizx[v])",
+			"                {",
+			"                    maxson = sizx[v];",
+			"                    son[u] = v;",
+			"                }",
+			"            }",
+			"        }",
+			"    }",
+			"",
+			"    void dfs2(int u, int t)",
+			"    {",
+			"        top[u] = t;",
+			"        dfn[u] = ++cnx;",
+			"        a[cnx] = w[u];",
+			"        if (!son[u])",
+			"            return;",
+			"        dfs2(son[u], t);",
+			"        for (int i = h[u]; ~i; i = e[i].ne)",
+			"        {",
+			"            int v = e[i].v;",
+			"            if (v != pre[u] && v != son[u])",
+			"            {",
+			"                dfs2(v, v);",
+			"            }",
+			"        }",
+			"    }",
+			"",
+			"    void mtre(int x, int y, int z)",
+			"    {",
+			"        while (top[x] != top[y])",
+			"        {",
+			"            if (deep[top[x]] < deep[top[y]]) ",
+			"            {",
+			"                swap(x, y);",
+			"            }",
+			"            modify(1, dfn[top[x]], dfn[x], z); ",
+			"            x = pre[top[x]];                   ",
+			"        }",
+			"        if (deep[x] > deep[y])",
+			"        { ",
+			"            swap(x, y);",
+			"        }",
+			"        modify(1, dfn[x], dfn[y], z);",
+			"    }",
+			"}",
+			"using namespace TreeChain;"
+		],
+		"description": "树链剖分"
 	}
 }
