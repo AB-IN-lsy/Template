@@ -1002,7 +1002,7 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"#define LL long long",
+			"#defind int long long",
 			"#define MP make_pair",
 			"#define SZ(X) ((int)(X).size())",
 			"#define IOS                      \\",
@@ -1369,7 +1369,7 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"#define LL long long",
+			"#define int long long",
 			"#define MP make_pair",
 			"#define SZ(X) ((int)(X).size())",
 			"#define IOS                      \\",
@@ -1682,5 +1682,38 @@
 			"using namespace TreeChain;"
 		],
 		"description": "树链剖分"
+	},
+	"ST": {
+		"prefix": "ST",
+		"body": [
+			"const int N = 200010, M = 18;",
+			"",
+			"int n, m;",
+			"int w[N], f[N][M], Log[N]; // 用来求log的",
+			"",
+			"void init()",
+			"{",
+			"    for (int j = 0; j < M; j++)",
+			"    {",
+			"        for (int i = 1; i + (1 << j) - 1 <= n; i++)",
+			"        {",
+			"            if (!j)",
+			"                f[i][j] = w[i];",
+			"            else",
+			"                f[i][j] = max(f[i][j - 1], f[i + (1 << j - 1)][j - 1]);",
+			"        }",
+			"    }",
+			"    Log[1] = 0;",
+			"    for (int i = 2; i <= n; i++)",
+			"        Log[i] = Log[i / 2] + 1;",
+			"}",
+			"",
+			"int query(int l, int r)",
+			"{",
+			"    int k = Log[r - l + 1];",
+			"    return max(f[l][k], f[r - (1 << k) + 1][k]);",
+			"}"
+		],
+		"description": "ST"
 	}
 }
