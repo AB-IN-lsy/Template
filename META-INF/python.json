@@ -126,11 +126,11 @@
 		"prefix": "Stack",
 		"body": [
 			"stk = []",
-			"for num in nums:",
-			"    while stk and stk[-1] >= num: #改成 <= 就是求每个数左边第一个比它 大 的数",
-			"        stk.pop()",
-			"    print(stk[-1] if stk else -1, end=\" \")",
-			"    stk.append(num)"
+			"    for num in nums:",
+			"        while stk and stk[-1] >= num: #改成 <= 就是求每个数左边第一个比它 大 的数",
+			"            stk.pop()",
+			"        print(stk[-1] if stk else -1, end=\" \")",
+			"        stk.append(num)"
 		],
 		"description": "单调栈"
 	},

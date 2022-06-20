@@ -1,0 +1,54 @@
+{
+	// Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"init": {
+		"prefix": "init",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"en\">",
+			"    <head>",
+			"        <meta charset=\"UTF-8\" />",
+			"        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />",
+			"        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+			"        <!-- <link",
+			"            href=\"https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css\"",
+			"            rel=\"stylesheet\"",
+			"            crossorigin=\"anonymous\"",
+			"        /> -->",
+			"        <style>",
+			"            * {",
+			"                padding: 0;",
+			"                margin: 0;",
+			"                box-sizing: border-box;",
+			"            }",
+			"        </style>",
+			"        <title>Document</title>",
+			"    </head>",
+			"    <body>",
+			"        <div class=\"container\"></div>",
+			"    </body>",
+			"    <script",
+			"        src=\"https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js\"",
+			"        crossorigin=\"anonymous\"",
+			"    ></script>",
+			"    <script>",
+			"        $(function () {",
+			"            ",
+			"        });",
+			"    </script>",
+			"</html>"
+		],
+		"description": "init"
+	}
+}

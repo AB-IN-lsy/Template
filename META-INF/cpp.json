@@ -1379,7 +1379,7 @@
 			"#define DEBUG(X) cout << #X << \": \" << X << endl;",
 			"typedef pair<int, int> PII;",
 			"",
-			"const int INF = INT_MAX;",
+			"const int INF = 1E18;",
 			"const int N = 1e6 + 10;",
 			"",
 			"signed main()",
