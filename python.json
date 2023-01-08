@@ -327,5 +327,16 @@
 			"        q[tt] = i"
 		],
 		"description": "单调队列"
+	},
+	"init": {
+		"prefix": "init",
+		"body": [
+			"import sys",
+			"# fast IO",
+			"input = sys.stdin.readline",
+			"read = lambda: map(int, input().split())",
+			""
+		],
+		"description": "init"
 	}
 }

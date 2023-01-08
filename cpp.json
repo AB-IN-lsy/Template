@@ -347,7 +347,7 @@
 		"prefix": "tree_array",
 		"body": [
 			"#define lowbit(x) ((x) & -(x))",
-			
+
 			"const int N = 1e6 + 10;",
 			"LL tree[N], n;",
 			"void add(LL x,LL d)",
@@ -1365,31 +1365,33 @@
 		],
 		"description": "链表"
 	},
-	"init": {
+	"初始化": {
 		"prefix": "init",
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
 			"#define int long long",
+			"#undef int",
+			"",
 			"#define SZ(X) ((int)(X).size())",
+			"#define ALL(X) (X).begin(), (X).end()",
 			"#define IOS                                                                                                            \\",
 			"    ios::sync_with_stdio(false);                                                                                       \\",
-			"    cin.tie(0);                                                                                                        \\",
-			"    cout.tie(0);",
-			"#define DEBUG(X) cout << #X << \": \" << X << endl;",
+			"    cin.tie(nullptr);                                                                                                  \\",
+			"    cout.tie(nullptr)",
+			"#define DEBUG(X) cout << #X << \": \" << X << '\\n'",
 			"typedef pair<int, int> PII;",
 			"",
-			"const int INF = INT_MAX;",
-			"const int N = 1e6 + 10;",
+			"const int N = 1e5 + 10, INF = 0x3f3f3f3f;",
 			"",
 			"signed main()",
 			"{",
 			"    IOS;",
-			"    ",
+			"",
 			"    return 0;",
 			"}"
 		],
-		"description": "init"
+		"description": "初始化"
 	},
 	"hashString": {
 		"prefix": "hashString",
@@ -1702,7 +1704,7 @@
 			"            if (!j)",
 			"                f[i][j] = w[i];",
 			"            else",
-			"                f[i][j] = max(f[i][j - 1], f[i + (1 << j - 1)][j - 1]);",
+			"                f[i][j] = max(f[i][j - 1], f[i + (1 << (j - 1))][j - 1]);",
 			"        }",
 			"    }",
 			"    Log[1] = 0;",
@@ -1717,5 +1719,24 @@
 			"}"
 		],
 		"description": "ST"
+	},
+	"手写hash": {
+		"prefix": "hash",
+		"body": [
+			"struct custom_hash {",
+			"    static uint64_t splitmix64(uint64_t x) {",
+			"        x += 0x9e3779b97f4a7c15;",
+			"        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;",
+			"        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;",
+			"        return x ^ (x >> 31);",
+			"    }",
+			" ",
+			"    size_t operator()(uint64_t x) const {",
+			"        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();",
+			"        return splitmix64(x + FIXED_RANDOM);",
+			"    }",
+			"};"
+		],
+		"description": "手写hash"
 	}
 }
