@@ -347,7 +347,6 @@
 		"prefix": "tree_array",
 		"body": [
 			"#define lowbit(x) ((x) & -(x))",
-
 			"const int N = 1e6 + 10;",
 			"LL tree[N], n;",
 			"void add(LL x,LL d)",
@@ -1738,5 +1737,14 @@
 			"};"
 		],
 		"description": "手写hash"
+	},
+	"O2": {
+		"prefix": "O2",
+		"body": [
+			"#pragma GCC optimize(1)",
+			"#pragma GCC optimize(2)    //先开优化",
+			"#pragma GCC optimize(3, \"Ofast\", \"inline\")"
+		],
+		"description": "O2"
 	}
 }
