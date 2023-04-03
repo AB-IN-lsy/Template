@@ -1224,8 +1224,8 @@
 	"ls与rs宏定义": {
 		"prefix": "ls",
 		"body": [
-			"#define ls                          i << 1",
-			"#define rs                          i << 1 | 1"
+			"#define ls p << 1",
+			"#define rs p << 1 | 1"
 		],
 		"description": "ls与rs宏定义"
 	},
@@ -1395,10 +1395,11 @@
 	"hashString": {
 		"prefix": "hashString",
 		"body": [
-			"const int base = 131, N = 1e5 + 10;",
-			"ULL h[N], p[N] = {1};",
-			"",
-			"ULL get(int l, int r){",
+			"typedef unsigned long long ULL;",
+			"ULL p[N] = {1}, h[N];",
+			"const int P = 13331;",
+			"ULL get(int l, int r)",
+			"{",
 			"    return h[r] - h[l - 1] * p[r - l + 1];",
 			"}"
 		],
@@ -1746,5 +1747,53 @@
 			"#pragma GCC optimize(3, \"Ofast\", \"inline\")"
 		],
 		"description": "O2"
+	},
+	"Trie01可持久化": {
+		"prefix": "Trie01Plus",
+		"body": [
+			"namespace Trie01Plus",
+			"{",
+			"int ver[M], root[N], son[M][2], idx;",
+			"int n, m;",
+			"int a[N];",
+			"",
+			"void init()",
+			"{",
+			"    root[0] = ++idx;",
+			"    ver[0] = -1;",
+			"    insert(root[0], 0, 0);",
+			"}",
+			"",
+			"void insert(int x, int y, int k)",
+			"// x为当前树的根节点编号，y为上一个树的根节点编号，k为第几棵树",
+			"{",
+			"    ver[x] = k;",
+			"    for (int i = 30; i >= 0; --i)",
+			"    {",
+			"        int u = a[k] >> i & 1;",
+			"        son[x][!u] = son[y][!u];",
+			"        son[x][u] = ++idx;",
+			"        x = son[x][u];",
+			"        y = son[y][u];",
+			"        ver[x] = k;",
+			"    }",
+			"}",
+			"",
+			"int query(int x, int L, int v)",
+			"// x为当前树的根节点，L为不能超越的树编号左边界，v为输入函数的定值",
+			"{",
+			"    for (int i = 30; i >= 0; --i)",
+			"    {",
+			"        int u = v >> i & 1;",
+			"        if (ver[son[x][!u]] >= L)",
+			"            x = son[x][!u]; // res += 1 << i;",
+			"        else",
+			"            x = son[x][u];",
+			"    }",
+			"    return a[ver[x]] ^ v;",
+			"}",
+			"} // namespace Trie01Plus"
+		],
+		"description": "Trie01可持久化"
 	}
 }
