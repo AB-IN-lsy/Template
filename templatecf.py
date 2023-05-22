@@ -24,7 +24,8 @@ INF = int(2e9)
 sys.setrecursionlimit(INF)
 input = lambda: sys.stdin.readline().rstrip("\r\n")  # Remove when Mutiple data
 read = lambda: map(int, input().split())
-letterTonumber = lambda x: ord(x.upper()) - 64
+LTN = lambda x: ord(x.upper()) - 65  # A -> 0
+NTL = lambda x: ascii_uppercase[x]  # 0 -> A
 
 # —————————————————————Division line ——————————————————————
 
