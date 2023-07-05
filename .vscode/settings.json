@@ -33,5 +33,5 @@
     },
     "git.ignoreLimitWarning": true,
     "python.pythonPath": "C:\\Users\\qpliu\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
-    "C_Cpp.errorSquiggles": "Enabled"
+    "C_Cpp.errorSquiggles": "enabled",
 }
