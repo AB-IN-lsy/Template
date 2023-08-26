@@ -14,6 +14,7 @@ static int IOS = []() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+
     return 0;
 }();
 
@@ -26,6 +27,7 @@ class Solution
 
 // signed main()
 // {
+//     freopen("Tests/input_1.txt", "r", stdin);
 //     Solution solution;
 //     return 0;
 // }

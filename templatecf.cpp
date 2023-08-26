@@ -23,6 +23,7 @@ void solve()
 
 signed main()
 {
+    //freopen("Tests/input_1.txt", "r", stdin);
     IOS;
     int T;
     cin >> T;
