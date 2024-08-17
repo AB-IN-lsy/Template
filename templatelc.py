@@ -2,13 +2,13 @@
 import random
 from collections import Counter, defaultdict, deque
 from datetime import datetime, timedelta
-from functools import lru_cache
+from functools import lru_cache, reduce
 from heapq import heapify, heappop, heappush, nlargest, nsmallest
 from itertools import combinations, compress, permutations, starmap, tee
-from math import ceil, comb, fabs, floor, gcd, log, perm, sqrt
+from math import ceil, comb, fabs, floor, gcd, hypot, log, perm, sqrt
 from string import ascii_lowercase, ascii_uppercase
 from sys import exit, setrecursionlimit, stdin
-from typing import Any, Dict, List, Tuple, TypeVar, Union
+from typing import Any, Callable, Dict, List, Optional, Tuple, TypeVar, Union
 
 # Constants
 TYPE = TypeVar('TYPE')
