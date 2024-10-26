@@ -1,0 +1,184 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "InitWorkplace",
+            "command": "echo d|xcopy %TemplatePath%\\.vscode ${workspaceFolder}\\.vscode /d",
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Initializes the workspace by copying template files."
+        },
+        {
+            "type": "shell",
+            "label": "CreateFolder",
+            "command": [
+                "CreateFolder.bat ${input:folderName} ${input:typeName} ${input:suffixName} ${input:runComparison}"
+            ],
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Creates a folder with specified name, type, and suffix."
+        },
+        {
+            "type": "shell",
+            "label": "CreateCompetition",
+            "command": [
+                "CreateCompetition.bat ${input:folderName} ${input:typeName} ${input:suffixName} ${input:numberOfQuestion}"
+            ],
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Creates a competition folder with specified parameters."
+        },
+        {
+            "type": "shell",
+            "label": "CreateArticle",
+            "command": "CreateArticle.bat ${input:articleType} ${input:platform}",
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Creates a new Hexo article."
+        },
+        {
+            "type": "shell",
+            "label": "DeployHexo",
+            "command": "DeployHexo.bat ${input:algoliaIndexingKey}",
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Deploys the Hexo site."
+        },
+        {
+            "type": "shell",
+            "label": "Upload Image to OSS",
+            "command": "python",
+            "args": [
+                "D:\\Code\\IDE\\Vscode\\BatScript\\upload_to_oss.py",
+                "${input:imagePath}"
+            ],
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "detail": "Upload Image to OSS"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "folderName",
+            "type": "promptString",
+            "description": "Please input the folder name",
+            "default": "Main"
+        },
+        {
+            "id": "suffixName",
+            "type": "promptString",
+            "description": "Please input the suffix name (*.cpp, *.py, *.go)",
+            "default": "py"
+        },
+        {
+            "id": "typeName",
+            "type": "promptString",
+            "description": "Please input the type name (base, cf, lc)",
+            "default": "lc"
+        },
+        {
+            "id": "runComparison",
+            "type": "promptString",
+            "description": "Please input whether use stress test",
+            "default": "false"
+        },
+        {
+            "id": "numberOfQuestion",
+            "type": "promptString",
+            "description": "Please input the Number of questions",
+            "default": "4"
+        },
+        {
+            "id": "articleType",
+            "type": "promptString",
+            "description": "Please input article type (cp, pb)",
+            "default": "pb"
+        },
+        {
+            "id": "platform",
+            "type": "promptString",
+            "description": "Please input the platform (Acwing, Article, AtCoder, Codeforces, GPLT, LanQiao, Leetcode, Nowcoder, Luogu, etc)",
+            "default": "Leetcode"
+        },
+        {
+            "id": "algoliaIndexingKey",
+            "type": "promptString",
+            "description": "Please input the Algolia indexing key",
+            "default": "c4e7e68262abaebd7acfd2eaa3832476"
+        },
+        {
+            "id": "imagePath",
+            "type": "promptString",
+            "description": "Enter the path to the image"
+        }
+    ],
+}
