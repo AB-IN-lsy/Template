@@ -1,17 +1,16 @@
-# 3.8.9 import
-import random
+# 3.8.6 import
 from collections import Counter, defaultdict, deque
 from datetime import datetime, timedelta
 from functools import lru_cache, reduce
 from heapq import heapify, heappop, heappush, nlargest, nsmallest
 from itertools import combinations, compress, permutations, starmap, tee
-from math import ceil, comb, fabs, floor, gcd, hypot, log, perm, sqrt
+from math import ceil, comb, fabs, floor, gcd, hypot, log, perm, sqrt, inf
 from string import ascii_lowercase, ascii_uppercase
+from bisect import bisect_left, bisect_right
 from sys import exit, setrecursionlimit, stdin
-from typing import Any, Callable, Dict, List, Optional, Tuple, TypeVar
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 # Constants
-TYPE = TypeVar('TYPE')
 N = int(2e5 + 10)
 M = int(20)
 INF = int(1e12)
