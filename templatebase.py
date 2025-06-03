@@ -1,14 +1,16 @@
 # 3.8.6 import
+import bisect
 from collections import Counter, defaultdict, deque
 from datetime import datetime, timedelta
 from functools import lru_cache, reduce
 from heapq import heapify, heappop, heappush, nlargest, nsmallest
-from itertools import combinations, compress, permutations, starmap, tee
-from math import ceil, comb, fabs, floor, gcd, hypot, log, perm, sqrt, inf
+from itertools import combinations, compress, permutations, groupby, accumulate
+from math import ceil, floor, fabs, gcd, log, exp, sqrt, hypot, inf
 from string import ascii_lowercase, ascii_uppercase
 from bisect import bisect_left, bisect_right
 from sys import exit, setrecursionlimit, stdin
 from typing import Any, Callable, Dict, List, Optional, Tuple
+from random import randint
 
 # Constants
 N = int(2e5 + 10)
@@ -18,7 +20,7 @@ OFFSET = int(100)
 MOD = int(1e9 + 7)
 
 # Set recursion limit
-setrecursionlimit(int(2e9))
+setrecursionlimit(int(1e7))
 
 
 class Arr:
